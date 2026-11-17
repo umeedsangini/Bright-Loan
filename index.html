@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17131f"><title>Bright Loans — Bright</title>
+<style>
+:root{--ink:#17131f;--panel:#211c2b;--purple:#8664f5;--purple2:#a18aff;--orange:#ff812e;--lime:#a8ed45;--gold:#ffb52e;--muted:#a8a1b4;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:#21133f;color:#fff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at 20% 8%,#8664f5 0,transparent 36%),radial-gradient(ellipse at 95% 70%,#56317f 0,transparent 35%),linear-gradient(150deg,#39235f,#201333 65%,#120d20)}
+.app{width:min(100%,440px);min-height:100dvh;margin:auto;background:var(--ink);position:relative;overflow:hidden;padding-bottom:92px;box-shadow:0 0 70px #0a061c88}
+.screen{display:none;min-height:100dvh;animation:appear .3s ease}.screen.active{display:block}@keyframes appear{from{opacity:.3;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero{padding:24px 23px 25px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;border:1px solid #ffffff0c;right:-150px;top:30px;box-shadow:0 0 0 35px #ffffff08,0 0 0 72px #ffffff05;pointer-events:none}
+.topline{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}.profile{display:flex;align-items:center;gap:11px}.avatar{width:45px;height:45px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#cbbaff,#7052d7);font-weight:900;font-size:17px;border:2px solid #ffffff30}.greeting small{display:block;color:#aaa2b8;font-size:10px;letter-spacing:1.2px;text-transform:uppercase}.greeting b{font-size:14px}.menu{width:46px;height:46px;border-radius:50%;background:#ffffff18;color:#fff;font-size:22px}
+.brand{display:flex;align-items:center;gap:9px}.brand-mark{height:29px;width:29px;border-radius:10px;background:linear-gradient(135deg,#a18aff,#704ce6);display:grid;place-items:center;font-size:12px;font-weight:900}.brand-name{font-size:13px;font-weight:800;letter-spacing:.2px}
+.headline{position:relative;z-index:1;margin:31px 0 0}.headline .kicker{color:#b7a7f8;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.headline h1{font-size:39px;line-height:1.03;letter-spacing:-1.6px;margin:9px 0 10px;font-weight:850;max-width:350px}.headline p{font-size:13px;color:#b8b1c3;margin:0;line-height:1.5}
+.dashboard{padding:0 19px}.balance-row{display:grid;grid-template-columns:1fr 1.14fr;gap:11px;align-items:center;margin-top:0;position:relative;z-index:2}
+.balance{min-height:146px;border-radius:24px;padding:16px 15px;background:linear-gradient(145deg,#9276ff,#7052df);box-shadow:0 13px 30px #704de64d;position:relative;overflow:hidden}.balance:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;border:1px solid #ffffff24;right:-68px;bottom:-55px;box-shadow:0 0 0 20px #ffffff0c}.tile-head{display:flex;align-items:center;gap:8px;font-size:10px;color:#f0eaff;font-weight:650}.tile-icon{width:29px;height:29px;border-radius:50%;background:#ffffff30;display:grid;place-items:center;font-size:14px}.round-arrow{margin-left:auto;width:30px;height:30px;border-radius:50%;background:#fff;color:#292039;display:grid;place-items:center;font-size:17px}.balance-amount{font-size:25px;font-weight:850;letter-spacing:-.8px;margin-top:22px;white-space:nowrap}.balance-caption{font-size:9px;color:#e7deff;margin-top:3px}
+.apply-card{min-height:160px;border-radius:25px;padding:17px 16px;background:linear-gradient(140deg,#ff9a37,#f36b22);color:#fff;transform:rotate(-4deg);box-shadow:0 15px 30px #f26c2445;position:relative;overflow:hidden;text-align:left}.apply-card:after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;border:1px solid #ffffff30;right:-75px;bottom:-80px;box-shadow:0 0 0 20px #ffffff0c}.apply-card .tile-head{font-size:10px}.apply-card .tile-icon{background:#ffffff42}.apply-title{font-size:22px;line-height:1.08;font-weight:850;margin-top:16px;max-width:140px;position:relative;z-index:1}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin:27px 3px 13px}.section-head h2{font-size:17px;margin:0;letter-spacing:-.3px}.section-head span{font-size:10px;color:#aaa2b7}
+.loan-stack{display:grid;gap:11px}.loan-option{min-height:105px;border-radius:24px;padding:18px 18px;display:flex;align-items:center;gap:13px;text-align:left;color:#1b2910;position:relative;overflow:hidden;box-shadow:0 10px 24px #0002;transition:.18s}.loan-option:active{transform:scale(.985)}.loan-option:after{content:"✦";position:absolute;right:20px;bottom:-28px;font-size:90px;color:#ffffff25}.loan-option.personal{background:linear-gradient(115deg,#a8ed45,#8bd62d)}.loan-option.business{background:linear-gradient(115deg,#ffc044,#ff9e18);color:#3c2605}.loan-option.education{background:linear-gradient(115deg,#70d7e8,#43b7d2);color:#07313b}.loan-icon{width:48px;height:48px;border-radius:50%;background:#ffffff9c;display:grid;place-items:center;font-size:22px;flex-shrink:0}.loan-copy{position:relative;z-index:1}.loan-copy b{display:block;font-size:19px;letter-spacing:-.4px}.loan-copy small{display:block;font-size:10px;opacity:.75;margin-top:4px}.loan-arrow{margin-left:auto;width:31px;height:31px;border-radius:50%;background:#ffffffc9;display:grid;place-items:center;font-size:17px;position:relative;z-index:1}
+.pending-card{background:#241f30;border:1px solid #ffffff12;border-radius:20px;padding:17px;margin-top:19px}.pending-top{display:flex;justify-content:space-between;align-items:center}.pending-top span{font-size:11px;color:#b6aec4}.pending-tag{font-size:9px!important;color:#ffcf72!important;background:#ffb52e18;padding:6px 9px;border-radius:20px}.pending-amount{font-size:26px;font-weight:850;margin:9px 0 2px}.pending-meta{font-size:10px;color:#aaa2b7}.pending-pay{width:100%;margin-top:14px;padding:13px;border-radius:13px;background:#fff;color:#241b36;font-weight:850}
+.nav{position:fixed;z-index:10;bottom:0;left:50%;transform:translateX(-50%);width:min(440px,100%);height:79px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:space-around;align-items:center;background:#1b1725ed;backdrop-filter:blur(18px);border-top:1px solid #ffffff13}.nav button{background:none;color:#8e879b;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:9px;font-weight:700;min-width:62px}.nav button .ni{font-size:19px;line-height:1}.nav button.active{color:#b49fff}
+.subhead{padding:22px 20px 17px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #ffffff12;background:#1c1726}.back{width:39px;height:39px;border-radius:13px;background:#ffffff14;color:white;font-size:23px}.subhead h2{font-size:18px;margin:0}.subhead p{font-size:11px;color:#aaa2b7;margin:3px 0 0}.wrap{padding:22px 20px}.panel{background:#241f30;border:1px solid #ffffff12;border-radius:21px;padding:19px}.label{display:block;font-size:11px;font-weight:750;color:#d5cede;margin:22px 0 9px}.muted{color:#aaa2b7;font-size:11px}.pay-total{text-align:center;font-size:36px;font-weight:900;letter-spacing:-1px;margin:12px 0 18px}.detail{display:flex;justify-content:space-between;border-top:1px solid #ffffff12;padding:13px 0;font-size:12px}.detail span{color:#aaa2b7}.code{width:100%;padding:16px;border:1px solid #ffffff25;background:#17131f;color:#fff;border-radius:14px;text-align:center;font-size:23px;letter-spacing:13px;outline:none}.code:focus,.control:focus{border-color:#9a80ff}.primary{width:100%;padding:15px;border-radius:14px;background:linear-gradient(110deg,#a28aff,#7655e8);color:white;font-weight:850;margin-top:16px;box-shadow:0 9px 25px #7655e844}.note{padding:13px;border-radius:13px;background:#8a70ed16;border:1px solid #9d88ff2b;color:#c9bfff;font-size:10px;line-height:1.55;margin-top:18px;text-align:center}.error{color:#ff8f9a;font-size:11px;min-height:18px;margin-top:8px}
+.center{text-align:center;padding:57px 25px}.spinner{width:67px;height:67px;border:5px solid #ffffff18;border-top-color:#a58cff;border-radius:50%;margin:0 auto 25px;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.center h2{font-size:22px;margin:0 0 9px}.center p{font-size:12px;color:#aaa2b7;line-height:1.6}.track{height:6px;border-radius:20px;background:#ffffff17;overflow:hidden;margin:30px 0 10px}.fill{height:100%;width:0;background:linear-gradient(90deg,#a58cff,#ff9a37)}.success{height:76px;width:76px;border-radius:50%;display:grid;place-items:center;background:#a8ed4520;color:#a8ed45;font-size:40px;margin:0 auto 20px;animation:pop .4s ease}@keyframes pop{from{transform:scale(.6)}to{transform:scale(1)}}.success-note{background:#a8ed4512;border:1px solid #a8ed4535;border-radius:14px;padding:14px;color:#d4f5ae;font-size:11px;line-height:1.5;margin-top:20px}
+.formgroup{margin-bottom:18px}.formgroup label{display:block;font-size:11px;font-weight:750;margin-bottom:8px;color:#d5cede}.control{width:100%;padding:14px;border-radius:12px;border:1px solid #ffffff20;background:#1b1725;color:#fff;outline:none}.range{width:100%;accent-color:#a18aff}.rangevalue{font-size:22px;color:#b49fff;font-weight:850;margin:7px 0}.profilecard{margin:22px 20px;padding:20px;border-radius:20px;background:linear-gradient(135deg,#7958e7,#30234d)}.profilecard h3{margin:12px 0 3px}.profilecard p{font-size:11px;color:#e0d8ff;margin:0}.ref{font-size:20px;font-weight:850;margin:10px 0}.pending-label{display:inline-block;padding:7px 10px;border-radius:20px;background:#ffb52e1a;color:#ffd27c;font-size:10px}.toast{display:none;position:fixed;z-index:20;bottom:95px;left:50%;transform:translateX(-50%);background:#fff;color:#211936;border-radius:12px;padding:11px 15px;font-size:11px;white-space:nowrap;box-shadow:0 8px 25px #0004}
+@media(min-width:600px){body{padding:20px 0}.app{border-radius:30px;min-height:calc(100dvh - 40px)}.nav{bottom:20px;border-radius:0 0 30px 30px}.screen{min-height:calc(100dvh - 40px)}}
+
+.pin-Bright{background:#fff;color:#17152f;min-height:calc(100dvh - 79px)}
+.pin-Bright .subhead{background:#fff;border-bottom:1px solid #eceaf2;color:#17152f}
+.pin-Bright .subhead p{color:#858197}.pin-Bright .back{background:#f0edfb;color:#6549d4}
+.pin-top{padding:18px 22px 16px;text-align:center;background:#fff}
+.Bright-bank{font-size:11px;font-weight:850;letter-spacing:.8px;color:#49445a}
+.Bright-paybox{margin:14px 20px 0;background:#fff5dc;border-radius:10px;padding:14px 15px;text-align:left}
+.Bright-paybox .payline{font-size:17px;font-weight:850;color:#252136}
+.Bright-paybox .to-line{font-size:11px;color:#625c6e;margin-top:8px}
+.Bright-code-area{padding:30px 20px 22px;text-align:center;background:#fff}
+.Bright-code-title{font-size:11px;font-weight:800;letter-spacing:.8px;color:#514b5e}
+.dots{display:flex;justify-content:center;gap:17px;margin:20px 0 9px}
+.dot{width:13px;height:13px;border-radius:50%;background:#e4e0ef;border:1px solid #d4cfea}
+.dot.filled{background:#273a87;border-color:#273a87}
+.code-check{height:18px;color:#273a87;font-size:19px;font-weight:800}
+.pin-warning{font-size:10px;color:#7b7488;margin:14px 0 0}
+.keypad-wrap{background:#f3f1f8;padding:18px 20px 25px}
+.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.key{height:49px;border-radius:30px;background:#fff;color:#242039;font-size:19px;font-weight:650;box-shadow:0 1px 1px #1d173010}
+.key:active{background:#e9e5f7;transform:scale(.98)}
+.key.utility{background:#dce0f0;color:#253777;font-size:17px}
+.key.pay{background:#273a87;color:#fff;font-size:12px;font-weight:850;letter-spacing:.5px}
+.key.pay:disabled{opacity:.42}
+.keypad-foot{font-size:9px;text-align:center;color:#797387;margin-top:15px;line-height:1.45}
+.pin-error{min-height:18px;color:#d44857;font-size:11px;margin-top:7px}
+
+
+/* Bright Loans visual refresh — PIN/payment-code page intentionally unchanged */
+body { background:#ededed !important; color:#171717 !important; }
+body:before { display:none !important; }
+.app { background:#ededed !important; box-shadow:none !important; }
+#home .hero {
+  background:#f7941d !important; color:#fff !important;
+  padding:24px 22px 27px !important;
+}
+#home .hero:after { border-color:#ffffff25 !important; }
+#home .greeting small, #home .headline .kicker, #home .headline p { color:#fff !important; }
+#home .brand-mark { background:#07105f !important; color:#fff !important; }
+#home .headline h1 { color:#fff !important; }
+#home .dashboard { padding:0 18px 20px !important; }
+#home .balance {
+  background:#07105f !important; color:#fff !important;
+  border-radius:17px !important; box-shadow:0 5px 14px #07105f25 !important;
+}
+#home .balance-amount { color:#fff !important; }
+#home .balance-caption, #home .tile-head { color:#fff !important; }
+#home .apply-card {
+  background:#f7941d !important; color:#fff !important;
+  border-radius:17px !important; transform:none !important;
+  box-shadow:0 5px 14px #f7941d35 !important;
+}
+#home .section-head h2 { color:#171717 !important; }
+#home .section-head span { color:#777 !important; }
+#home .loan-stack { gap:12px !important; }
+#home .loan-option {
+  border-radius:15px !important; min-height:88px !important;
+  box-shadow:0 3px 10px #00000012 !important;
+}
+#home .loan-option.personal { background:#07105f !important; color:#fff !important; }
+#home .loan-option.business { background:#f7941d !important; color:#fff !important; }
+#home .loan-option.education { background:#fff !important; color:#07105f !important; border:1px solid #e2e2e2 !important; }
+#home .pending-card {
+  background:#fff !important; color:#171717 !important;
+  border:1px solid #e2e2e2 !important; border-radius:16px !important;
+  box-shadow:0 3px 10px #0000000c !important;
+}
+#home .pending-top span, #home .pending-meta { color:#666 !important; }
+#home .pending-pay { background:#f7941d !important; color:#fff !important; }
+#home .note, #apply .note, #status .note, #profile .note {
+  background:#fff !important; color:#555 !important;
+  border:1px solid #e1e1e1 !important;
+}
+.screen:not(.pin-Bright) .subhead {
+  background:#f7941d !important; color:#fff !important;
+  border-bottom:0 !important; padding:18px 20px !important;
+}
+.screen:not(.pin-Bright) .subhead p { color:#fff !important; opacity:.9; }
+.screen:not(.pin-Bright) .back {
+  background:#ffffff35 !important; color:#fff !important;
+}
+#review .wrap, #apply .wrap, #status .wrap, #profile .wrap {
+  background:#ededed !important; padding:20px !important;
+}
+.screen:not(.pin-Bright) .panel {
+  background:#fff !important; color:#171717 !important;
+  border:1px solid #e2e2e2 !important; border-radius:17px !important;
+  box-shadow:0 3px 12px #0000000c !important;
+}
+.screen:not(.pin-Bright) .muted,
+.screen:not(.pin-Bright) .detail span { color:#666 !important; }
+.screen:not(.pin-Bright) .detail { border-top-color:#eeeeee !important; }
+.screen:not(.pin-Bright) .primary {
+  background:#f7941d !important; color:#fff !important;
+  border-radius:13px !important; box-shadow:0 4px 10px #f7941d35 !important;
+}
+#apply .control {
+  background:#fff !important; color:#171717 !important;
+  border:1px solid #d9d9d9 !important;
+}
+#apply .formgroup label { color:#333 !important; }
+#apply .rangevalue { color:#07105f !important; }
+#status .profilecard, #profile .profilecard {
+  background:#07105f !important; color:#fff !important;
+  border-radius:17px !important;
+}
+#status .pending-label { background:#fff1dc !important; color:#a95a00 !important; }
+#processing .center, #complete .center { color:#171717 !important; }
+#processing .center p, #complete .center p { color:#666 !important; }
+#processing .spinner { border-color:#f7941d30 !important; border-top-color:#f7941d !important; }
+#processing .fill { background:#f7941d !important; }
+#complete .success { background:#e8f6dc !important; color:#287a24 !important; }
+.nav {
+  background:#fff !important; border-top:1px solid #e2e2e2 !important;
+  box-shadow:0 -3px 12px #00000008 !important;
+}
+.nav button { color:#777 !important; }
+.nav button.active { color:#f7941d !important; }
+.toast { background:#07105f !important; color:#fff !important; }
+
+</style></head><body><div class="app">
+<main id="home" class="screen active">
+<header class="hero">
+ <div class="topline"><div class="profile"><div class="avatar">SS</div><div class="greeting"><small>Good evening</small><b>Sharvan Singh</b></div></div><button class="menu" onclick="showScreen('profile')" aria-label="Open profile">☰</button></div>
+ <div class="headline"><div class="brand"><div class="brand-mark">BL</div><div class="brand-name">BRIGHT LOANS</div></div><div class="kicker" style="margin-top:19px">Finance, made simple</div><h1>Instant Loan<br>Solutions.</h1><p>Empower your financial success.</p></div>
+</header>
+<div class="dashboard">
+ <div class="balance-row">
+  <div class="balance due-tile"><div class="tile-head"><div class="tile-icon">₹</div><span>Due<br>amount</span><span class="round-arrow">↗</span></div><div id="homeDueAmount" class="balance-amount">₹62,340</div><div class="balance-caption">Pending repayment</div></div>
+  <button class="apply-card" onclick="showScreen('apply')"><div class="tile-head"><div class="tile-icon">▧</div><span>Loan<br>application</span><span class="round-arrow">↗</span></div><div class="apply-title">Apply for<br>a Loan</div></button>
+ </div>
+ <div class="section-head"><h2>Active Loans</h2><span>Explore options ↗</span></div>
+ <div class="loan-stack">
+  <button class="loan-option personal" onclick="openApply('Personal expenses')"><div class="loan-icon">♟</div><div class="loan-copy"><b>Personal Loan</b><small>Flexible funds for life's plans</small></div><span class="loan-arrow">↗</span></button>
+  <button class="loan-option business" onclick="openApply('Business')"><div class="loan-icon">▣</div><div class="loan-copy"><b>Business Loan</b><small>Support for your next big move</small></div><span class="loan-arrow">↗</span></button>
+  <button class="loan-option education" onclick="openApply('Education')"><div class="loan-icon">✦</div><div class="loan-copy"><b>Education Loan</b><small>Invest in what comes next</small></div><span class="loan-arrow">↗</span></button>
+ </div>
+ <div class="pending-card"><div class="pending-top"><span>Your pending repayment</span><span class="pending-tag">● PENDING</span></div><div id="pendingAmount" class="pending-amount">₹62,340</div><div id="pendingMeta" class="pending-meta">Pending amount · Ref. BL-2026-04821</div><button id="pendingPayButton" class="pending-pay" onclick="showScreen('review')">Pay ₹62,340&nbsp; ↗</button></div>
+ <div class="note">Bright EXPERIENCE · No real loan is offered and no money is collected or transferred.</div>
+</div></main>
+
+<section id="review" class="screen">
+<div class="subhead"><button class="back" onclick="showScreen('home')">‹</button><div><h2>Payment review</h2><p>Review the amount before continuing</p></div></div>
+<div class="wrap"><div class="panel">
+<div class="muted" style="text-align:center">TOTAL DUE AMOUNT</div><div class="pay-total">₹62,340</div>
+<div class="detail"><span>Pay to</span><b>Bright Loans</b></div>
+<div class="detail"><span>Payment reference</span><b>BL-2026-04821</b></div>
+<div class="detail"><span>Payment status</span><b style="color:#ffca71">Pending</b></div>
+<button class="primary" onclick="showScreen('payment')">Make Payment&nbsp; ↗</button>
+</div><div class="note">Bright PAYMENT FLOW · This prototype is not connected to a bank or payment network.</div></div>
+</section>
+<section id="payment" class="screen pin-Bright">
+<div class="subhead"><button class="back" onclick="showScreen('home')">‹</button><div><h2>Bright payment</h2><p>Secure Bright-code verification</p></div></div>
+<div class="pin-top"><div class="Bright-bank">BRIGHT LOANS · Bright</div><div class="Bright-paybox"><div class="payline">Pay ₹62,340.00</div><div class="to-line">To&nbsp; BRIGHT LOANS</div></div></div>
+<div class="Bright-code-area"><div class="Bright-code-title">ENTER 4-DIGIT Bright CODE</div>
+<div id="codeDots" class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<div id="pinError" class="pin-error" role="alert"></div><div class="code-check">✓</div>
+<div class="pin-warning">Bright code only — never enter your real UPI PIN.</div></div>
+<div class="keypad-wrap"><div class="keypad">
+<button type="button" class="key" onclick="addDigit('1')">1</button><button type="button" class="key" onclick="addDigit('2')">2</button><button type="button" class="key" onclick="addDigit('3')">3</button>
+<button type="button" class="key" onclick="addDigit('4')">4</button><button type="button" class="key" onclick="addDigit('5')">5</button><button type="button" class="key" onclick="addDigit('6')">6</button>
+<button type="button" class="key" onclick="addDigit('7')">7</button><button type="button" class="key" onclick="addDigit('8')">8</button><button type="button" class="key" onclick="addDigit('9')">9</button>
+<button type="button" class="key utility" onclick="deleteDigit()">⌫</button><button type="button" class="key" onclick="addDigit('0')">0</button><button type="button" id="BrightPayBtn" class="key pay" onclick="verifyCode()" disabled>PAY</button>
+</div><div class="keypad-foot">SIMULATION ONLY · No bank, UPI app or payment network is connected.<br>Sample Bright code: 9849</div></div></section>
+<section id="processing" class="screen"><div class="subhead"><div style="width:39px"></div><div><h2>Payment processing</h2><p>Simulation in progress</p></div></div><div class="center"><div class="spinner"></div><h2>Processing Payment</h2><p>Please wait while we process your request.</p><div class="track"><div id="progressFill" class="fill"></div></div><div id="countdown" class="muted">6 seconds remaining</div><div class="note">SIMULATION ONLY · Please wait for the animation to finish.</div></div></section>
+<section id="complete" class="screen"><div class="subhead"><button class="back" onclick="showScreen('home')">‹</button><div><h2>Payment result</h2><p>Bright flow completed</p></div></div><div class="center"><div class="success">✓</div><h2>Completed</h2><div class="pay-total">₹62,340</div><p>Bright payment amount</p><button class="primary" onclick="showScreen('home')">Back to Home</button></div></section>
+<section id="apply" class="screen"><div class="subhead"><button class="back" onclick="showScreen('home')">‹</button><div><h2>Apply for a loan</h2><p>Explore a sample loan request</p></div></div><div class="wrap"><div class="note" style="margin-top:0">SAMPLE FORM · This does not submit a real loan application.</div><div class="formgroup"><label>Loan amount</label><div id="loanValue" class="rangevalue">₹50,000</div><input class="range" id="loanRange" type="range" min="10000" max="300000" step="5000" value="50000" oninput="loanValue.textContent='₹'+Number(this.value).toLocaleString('en-IN')"></div><div class="formgroup"><label for="purpose">Loan purpose</label><select id="purpose" class="control"><option>Personal expenses</option><option>Medical expenses</option><option>Education</option><option>Home improvement</option><option>Business</option></select></div><div class="formgroup"><label for="tenure">Repayment tenure</label><select id="tenure" class="control"><option>6 months</option><option>12 months</option><option>18 months</option><option>24 months</option><option>36 months</option></select></div><div class="formgroup"><label for="fullName">Full name (sample)</label><input id="fullName" class="control" placeholder="Sharvan Singh"></div><div class="formgroup"><label for="email">Email (sample)</label><input id="email" class="control" type="email" placeholder="alex@example.com"></div><button class="primary" onclick="submitApplication()">Submit Bright application</button></div></section>
+<section id="status" class="screen"><div class="subhead"><button class="back" onclick="showScreen('home')">‹</button><div><h2>Application status</h2><p>Track your sample application</p></div></div><div class="wrap"><div class="panel"><div class="muted">APPLICATION REFERENCE</div><div class="ref">BL-2026-04821</div><span class="pending-label">● Pending review</span><div class="detail" style="margin-top:18px"><span>Submitted on</span><b>10 Nov 2026</b></div><div class="detail"><span>Application type</span><b>Personal loan (Bright)</b></div><div class="detail"><span>Current stage</span><b>Initial review</b></div></div><div class="note">Fictional sample status. Not connected to a lender or credit bureau.</div></div></section>
+<section id="profile" class="screen"><div class="subhead"><button class="back" onclick="showScreen('home')">‹</button><div><h2>My profile</h2><p>Bright account information</p></div></div><div class="profilecard"><div class="avatar">SS</div><h3>Sharvan Singh</h3><p>Bright member · BL-USER-001</p></div><div class="wrap" style="padding-top:0"><div class="panel"><div class="detail"><span>Registered email</span><b>alex@example.com</b></div><div class="detail"><span>Mobile number</span><b>+91 98XXXXXX10</b></div><div class="detail"><span>Account type</span><b>Bright profile</b></div><div class="detail"><span>Member since</span><b>November 2026</b></div></div><div class="note">All profile details shown here are fictional sample data.</div></div></section>
+<nav class="nav"><button class="active" data-screen="home" onclick="showScreen('home')"><span class="ni">⌂</span>Home</button><button data-screen="apply" onclick="showScreen('apply')"><span class="ni">＋</span>Apply</button><button data-screen="status" onclick="showScreen('status')"><span class="ni">▤</span>Status</button><button data-screen="profile" onclick="showScreen('profile')"><span class="ni">♙</span>Profile</button></nav><div id="toast" class="toast"></div></div>
+<script>
+let processingTimer=null,processingStarted=0;const PROCESSING_MS=6000;
+function showScreen(id){if(id==='payment'&&typeof enteredBrightCode!=='undefined'){enteredBrightCode='';if(document.getElementById('pinError'))document.getElementById('pinError').textContent='';if(document.getElementById('codeDots'))renderDots();}document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.screen===id));window.scrollTo({top:0,behavior:'smooth'});}
+function openApply(purpose){showScreen('apply');document.getElementById('purpose').value=purpose;}
+let enteredBrightCode='';
+function renderDots(){document.querySelectorAll('#codeDots .dot').forEach((d,i)=>d.classList.toggle('filled',i<enteredBrightCode.length));document.getElementById('BrightPayBtn').disabled=enteredBrightCode.length!==4;}
+function addDigit(d){if(enteredBrightCode.length>=4)return;enteredBrightCode+=d;document.getElementById('pinError').textContent='';renderDots();}
+function deleteDigit(){enteredBrightCode=enteredBrightCode.slice(0,-1);document.getElementById('pinError').textContent='';renderDots();}
+function verifyCode(){if(enteredBrightCode!=='9849'){document.getElementById('pinError').textContent='Incorrect Bright code. Please try again.';enteredBrightCode='';renderDots();return;}document.getElementById('BrightPayBtn').disabled=true;startProcessing();}
+function startProcessing(){showScreen('processing');const fill=document.getElementById('progressFill'),count=document.getElementById('countdown');processingStarted=Date.now();fill.style.width='0%';if(processingTimer)clearInterval(processingTimer);processingTimer=setInterval(()=>{let elapsed=Date.now()-processingStarted;fill.style.width=Math.min(100,elapsed/PROCESSING_MS*100)+'%';let left=Math.max(0,Math.ceil((PROCESSING_MS-elapsed)/1000));count.textContent=left?left+' seconds remaining':'Finishing…';if(elapsed>=PROCESSING_MS){clearInterval(processingTimer);processingTimer=null;markPaymentCompleted();showScreen('complete');}},40);}
+function markPaymentCompleted(){
+  document.getElementById('homeDueAmount').textContent='₹0';
+  document.getElementById('pendingAmount').textContent='₹0';
+  document.getElementById('pendingMeta').textContent='Payment completed · Ref. BL-2026-04821';
+  const payButton=document.getElementById('pendingPayButton');
+  payButton.textContent='PAID ✓';
+  payButton.disabled=true;
+  payButton.style.opacity='.65';
+  const tag=document.querySelector('.pending-tag');
+  tag.textContent='✓ PAID';
+  tag.style.color='#a8ed45';
+  tag.style.background='#a8ed4518';
+  document.querySelector('.pending-top > span:first-child').textContent='Repayment status';
+}
+function submitApplication(){if(!document.getElementById('fullName').value.trim()){toast('Please enter a sample name to continue.');return;}toast('Bright application submitted — not sent to a lender.');setTimeout(()=>showScreen('status'),1000);}
+function toast(msg){let t=document.getElementById('toast');t.textContent=msg;t.style.display='block';clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.style.display='none',2500);}
+</script></body></html>
